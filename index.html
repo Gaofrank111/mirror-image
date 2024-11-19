@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>照片镜像显示</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0 auto;
+            padding: 20px;
+            text-align: center;
+        }
+        .image-container {
+            display: none;
+            justify-content: center;
+            align-items: start;
+            gap: 0;
+            margin-top: 20px;
+            flex-wrap: nowrap;
+        }
+        .image-wrapper {
+            border: 1px solid #ccc;
+            padding: 10px;
+            margin: 0;
+        }
+        .image-wrapper p {
+            margin: 5px 0;
+            font-weight: bold;
+        }
+        #originalImage, #mirrorImage {
+            display: block;
+            margin: 0;
+        }
+        #uploadBtn {
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            margin: 20px 0;
+        }
+        #uploadBtn:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <h1>照片镜像显示工具</h1>
+    <input type="file" id="imageInput" accept="image/*" style="display: none;">
+    <button id="uploadBtn">选择图片</button>
+    <div class="image-container" id="imageContainer">
+        <div class="image-wrapper">
+            <p>原始图片</p>
+            <img id="originalImage" alt="原始图片">
+        </div>
+        <div class="image-wrapper">
+            <p>镜像图片</p>
+            <canvas id="mirrorImage"></canvas>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html> 
